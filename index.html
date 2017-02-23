@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="button">BUTTON</button>
+<script>
+    var arr = [{"height":200,"thumbnail":"http://media4.giphy.com/media/FnsbzAybylCs8/200w_s.gif","gif":"http://media4.giphy.com/media/FnsbzAybylCs8/200w.gif","url":"http://media4.giphy.com/media/FnsbzAybylCs8/giphy.gif","fbUrl":"http://giphy.com/gifs/mrw-crush-name-FnsbzAybylCs8","loaded":false,"id":"FnsbzAybylCs8"},{"height":113,"thumbnail":"http://media1.giphy.com/media/thWS2MAInoVos/200w_s.gif","gif":"http://media1.giphy.com/media/thWS2MAInoVos/200w.gif","url":"http://media1.giphy.com/media/thWS2MAInoVos/giphy.gif","fbUrl":"http://giphy.com/gifs/adweek-nfl-bears-thWS2MAInoVos","loaded":false,"id":"thWS2MAInoVos"},{"height":200,"thumbnail":"http://media2.giphy.com/media/26xBFKBULFz7lOjra/200w_s.gif","gif":"http://media2.giphy.com/media/26xBFKBULFz7lOjra/200w.gif","url":"http://media2.giphy.com/media/26xBFKBULFz7lOjra/giphy.gif","fbUrl":"http://giphy.com/gifs/cat-animated-girl-26xBFKBULFz7lOjra","loaded":false,"id":"26xBFKBULFz7lOjra"},{"height":241,"thumbnail":"http://media1.giphy.com/media/yFQ0ywscgobJK/200w_s.gif","gif":"http://media1.giphy.com/media/yFQ0ywscgobJK/200w.gif","url":"http://media1.giphy.com/media/yFQ0ywscgobJK/giphy.gif","fbUrl":"http://giphy.com/gifs/facepalm-yFQ0ywscgobJK","loaded":false,"id":"yFQ0ywscgobJK"},{"height":219,"thumbnail":"http://media0.giphy.com/media/l0Exv40OjaFq0slzi/200w_s.gif","gif":"http://media0.giphy.com/media/l0Exv40OjaFq0slzi/200w.gif","url":"http://media0.giphy.com/media/l0Exv40OjaFq0slzi/giphy.gif","fbUrl":"http://giphy.com/gifs/angry-heart-l0Exv40OjaFq0slzi","loaded":false,"id":"l0Exv40OjaFq0slzi"},{"height":112,"thumbnail":"http://media1.giphy.com/media/l0Ex0g98aVovPdfTa/200w_s.gif","gif":"http://media1.giphy.com/media/l0Ex0g98aVovPdfTa/200w.gif","url":"http://media1.giphy.com/media/l0Ex0g98aVovPdfTa/giphy.gif","fbUrl":"http://giphy.com/gifs/studiosoriginals-l0Ex0g98aVovPdfTa","loaded":false,"id":"l0Ex0g98aVovPdfTa"},{"height":113,"thumbnail":"http://media0.giphy.com/media/WfXQpCwemYCnm/200w_s.gif","gif":"http://media0.giphy.com/media/WfXQpCwemYCnm/200w.gif","url":"http://media0.giphy.com/media/WfXQpCwemYCnm/giphy.gif","fbUrl":"http://giphy.com/gifs/sonymusiccolombia-couple-tucalor-julietavengeas-WfXQpCwemYCnm","loaded":false,"id":"WfXQpCwemYCnm"},{"height":112,"thumbnail":"http://media0.giphy.com/media/26gsalBVQMQ7LoVfG/200w_s.gif","gif":"http://media0.giphy.com/media/26gsalBVQMQ7LoVfG/200w.gif","url":"http://media0.giphy.com/media/26gsalBVQMQ7LoVfG/giphy.gif","fbUrl":"http://giphy.com/gifs/snl-saturday-night-live-season-42-26gsalBVQMQ7LoVfG","loaded":false,"id":"26gsalBVQMQ7LoVfG"},{"height":113,"thumbnail":"http://media4.giphy.com/media/26xBsFK9RVgoum1q0/200w_s.gif","gif":"http://media4.giphy.com/media/26xBsFK9RVgoum1q0/200w.gif","url":"http://media4.giphy.com/media/26xBsFK9RVgoum1q0/giphy.gif","fbUrl":"http://giphy.com/gifs/party-woman-neon-26xBsFK9RVgoum1q0","loaded":false,"id":"26xBsFK9RVgoum1q0"},{"height":200,"thumbnail":"http://media1.giphy.com/media/FnsbzAybylCs8/200w_s.gif","gif":"http://media1.giphy.com/media/FnsbzAybylCs8/200w.gif","url":"http://media1.giphy.com/media/FnsbzAybylCs8/giphy.gif","fbUrl":"http://giphy.com/gifs/mrw-crush-name-FnsbzAybylCs8","loaded":false,"id":"FnsbzAybylCs8"},{"height":113,"thumbnail":"http://media4.giphy.com/media/9Umj7Chj6wxlC/200w_s.gif","gif":"http://media4.giphy.com/media/9Umj7Chj6wxlC/200w.gif","url":"http://media4.giphy.com/media/9Umj7Chj6wxlC/giphy.gif","fbUrl":"http://giphy.com/gifs/cheezburger-art-amazing-9Umj7Chj6wxlC","loaded":false,"id":"9Umj7Chj6wxlC"},{"height":110,"thumbnail":"http://media1.giphy.com/media/l3q2y2764DUQIKNRm/200w_s.gif","gif":"http://media1.giphy.com/media/l3q2y2764DUQIKNRm/200w.gif","url":"http://media1.giphy.com/media/l3q2y2764DUQIKNRm/giphy.gif","fbUrl":"http://giphy.com/gifs/nba-lebron-james-three-l3q2y2764DUQIKNRm","loaded":false,"id":"l3q2y2764DUQIKNRm"}]
+    var button = document.querySelector('#button');
+    button.addEventListener('click', function () {
+
+        this.innerHTML = 'Loading...';
+        /*xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://localhost:3000/', true);
+        xhr.responseType = 'arraybuffer';
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.send(JSON.stringify(arr));
+        xhr.addEventListener('readystatechange', function () {
+            if(this.readyState != 4) return;
+
+            if(this.status != 200) {
+                console.log(this.status);
+                console.log(this);
+            } else {
+                var a = document.createElement('a');
+                a.href = window.URL.createObjectURL(xhr.response);
+                a.download = "myFile.zip";
+                a.innerText = 'TEXT';
+                //a.style.display = 'none';
+                document.body.appendChild(a);
+                //a.click();
+            }
+        })*/
+
+        var xhr = new XMLHttpRequest();
+        var url = 'http://localhost:3000/';
+        xhr.open('POST', url, true);
+        xhr.responseType = 'arraybuffer';
+        xhr.onload = function () {
+            if (this.status === 200) {
+                var filename = "";
+                var disposition = xhr.getResponseHeader('Content-Disposition');
+                if (disposition && disposition.indexOf('attachment') !== -1) {
+                    var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+                    var matches = filenameRegex.exec(disposition);
+                    if (matches != null && matches[1]) filename = matches[1].replace(/['"]/g, '');
+                }
+                var type = xhr.getResponseHeader('Content-Type');
+
+                var blob = new Blob([this.response], { type: type });
+                if (typeof window.navigator.msSaveBlob !== 'undefined') {
+                    // IE workaround for "HTML7007: One or more blob URLs were revoked by closing the blob for which they were created. These URLs will no longer resolve as the data backing the URL has been freed."
+                    window.navigator.msSaveBlob(blob, filename);
+                } else {
+                    var URL = window.URL || window.webkitURL;
+                    var downloadUrl = URL.createObjectURL(blob);
+
+                    if (filename) {
+                        // use HTML5 a[download] attribute to specify filename
+                        var a = document.createElement("a");
+                        // safari doesn't support this yet
+                        if (typeof a.download === 'undefined') {
+                            window.location = downloadUrl;
+                        } else {
+                            a.href = downloadUrl;
+                            a.download = filename;
+                            document.body.appendChild(a);
+                            a.click();
+                        }
+                    } else {
+                        window.location = downloadUrl;
+                    }
+
+                    setTimeout(function () {
+                        URL.revokeObjectURL(downloadUrl);
+                        button.innerHTML = 'Done!';
+                    }, 100); // cleanup
+                }
+            }
+        };
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.send();
+    })
+</script>
+</body>
+</html>
